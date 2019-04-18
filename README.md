@@ -28,7 +28,7 @@
 
 * RandomForestClassifier, sklearn
 * CatBoostClassifier, catboost
-* PyTorch: [Dropout(p=0.3), nn.BatchNorm1d(770), nn.Linear(770, 1024), nn.ReLU(), nn.Linear(1024, 256), nn.ReLU(), nn.Linear(256, 14), nn.LogSoftmax()]
+* PyTorch: [nn.BatchNorm1d(770, *eps*=1e-05, *momentum*=0.1, *affine*=True),    nn.Linear(*in_features*=770, *out_features*=1024, *bias*=True),    nn.ReLU(),    nn.Dropout(*p*=0.5),    nn.Linear(*in_features*=1024, out_features*=256, *bias*=True),    nn.ReLU(),    nn.Linear(*in_features*=256, *out_features*=14, *bias*=True),     nn.LogSoftmax()]
 
 
 ### Случайный лес
@@ -50,7 +50,7 @@
 
 * Максимальная глубина дерева *max_depth*
 
-  Слишком большая глубина приводит к переобучению леса. Экспериментально я подобрал порог ~14, где переобучение прекращается. Проверим.
+  Слишком большая глубина приводит к переобучению леса. Экспериментально я подобрал порог ~20, где переобучение прекращается. Проверим.
 
 * Максимальное количество листьев в дереве *max_leaf_nodes*
 
